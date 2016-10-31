@@ -54,10 +54,10 @@ def update_row
   @id = params["id"]
   @caption = params["the_caption"].to_s
   @source = params["the_source"].to_s
-  create = Photo.find_by({ :id => @id })
-  create.caption = @caption
-  create.source = @source
-  create.save
+  update = Photo.find_by({ :id => @id })
+  update.caption = @caption
+  update.source = @source
+  update.save
 
 render("photos/show.html.erb")
 end
